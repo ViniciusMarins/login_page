@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+      <div class="main-login">
+        <div class="left-login">
+          <h1>
+            Faça Login<br/>
+            E entre para o nosso time
+          </h1>
+          <img
+            src="images/fingerprint-animate.svg"
+            alt="Login Image"
+            class="left-login-image"
+          />
+        </div>
+        <div class="right-login">
+          <div class="card-login">
+            <h1>LOGIN</h1>
+  
+            <div class="textfield">
+              <label for="usuario">Usuário</label>
+              <input type="text" name="usuario" placeholder="Usuário" class="input_usuario" />
+              <img src="flavicons/circle-xmark-regular.svg" class="input-icon-usuario"></img>
+            </div>
+  
+            <div class="textfield">
+              <label for="senha">Senha</label>
+              <input type="password" name="senha" placeholder="Senha" class="input_senha"/>
+              <img src="flavicons/eye-regular.svg" class="input-icon-senha"></img>
+            </div>
+  
+            <button class="btn-login">Login</button>
+          </div>
+        </div>
+      </div>
+    
+    <script>
+        const input_usuario = document.querySelector('.input_usuario');
+        const input_senha = document.querySelector('.input_senha');
+        const input_icon_senha = document.querySelector('.input-icon-senha');
+        const input_icon_usuario = document.querySelector('.input-icon-usuario');
+        
+        let activeType = 'password';
+
+        input_icon_usuario.addEventListener("click", () => {
+            console.log(input_icon_usuario.value)
+            input_usuario.value = "";
+        });
+
+        input_icon_senha.addEventListener("click", () => {
+
+            if(activeType == 'text'){
+                input_senha.type = 'password'
+                activeType = 'password'
+            }else{
+                input_senha.type = 'text'
+                activeType = 'text'
+            }
+        });
+
+    </script>
+  </body>
+</html>
